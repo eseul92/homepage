@@ -1,0 +1,61 @@
+<!DOCTYPE html> <!-- HTML5로 설정 -->
+<html> <!-- html 영역시작 -->
+<head> <!-- head 영역시작-->
+<meta charset="EUC-KR"> <!-- 인코딩을 "EUC-KR"로 설정 -->
+<title>ESeul homepage</title> <!-- 타이틀 설정 -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> <!-- viewport 설정 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> <!-- jquery import -->
+<script src="homepage.js" type="text/javascript"></script> <!-- homepage.js 파일로 스크립트 설정 -->
+<link href="style.css" rel="stylesheet" type="text/css"> <!-- style.css 파일로 스타일시트 설정-->
+</head> <!-- head 영역종료 -->
+<body> <!-- body 영역시작 -->
+	<header> <!-- header 태그시작 -->
+		<nav class="menu"> <!-- class가 "menu"인 nav설정 -->
+			<a id="pull" href="#">MENU</a> <!-- "MENU"에 id가 "pull"이고 페이지전환없이  링크로 거는 a태그-->
+			<a href="intro.html"><img src="logo.png"></a> <!-- logo.png 이미지 파일 클릭시 intro.html로 가는 a태그 -->
+				<ul id="menu"> <!-- id가 "menu"인 ul태그 -->
+					<li><a href="intro.html">HOME</a> <!-- li태그 속에 "HOME"에 intro.html링크거는 a태그 -->
+					<li><a href="#" id="port">PORTFOLIO</a> <!-- li태그 속에 "PORTFOLIO"에 id가 port이고 페이지전환없이 링크거는 a태그 -->
+						<ul id="sub_port"> <!-- id가 "sub_port"인 ul태그  -->
+							<li id="sub_home"><a href="#">HOMEPAGE</a></li> <!-- id가 "sub_home" li태그 속에  "HOMEPAGE"에 페이지전환없이 링크거는 a태그 -->
+							<li id="sub_app"><a href="#">APP</a></li> <!-- id가 "sub_app"인 li태그 속에 "APP"에 페이지전환없이 링크거는 a태그 -->
+						</ul><!-- ul태그 종료-->
+					</li><!-- li태그종료 -->
+					<li><a href="#">COMMUNITY</a></li> <!-- li태그 속에 "COMMUNITY"에 페이지전환없이 링크거는 a태그 -->
+					<li><a href="#">GALLERY</a></li> <!-- li태그 속에 "GALLERY"에 페이지전환없이 링크거는 a태그 -->
+					<li><a href="#">ABOUT ME</a></li><!-- li태그 속에 "ABOUT ME"에 페이지전환없이 링크거는 a태그 -->
+					<li><a href="#">CONTACT</a></li><!-- li태그 속에 "CONTACT"에 페이지전환없이 링크거는 a태그 -->
+				</ul><!-- ul 태그종료 -->
+			
+		</nav><!-- nav 태그종료 -->
+	</header><!-- header 태그종료 -->
+	
+	<article class="entries"> <!-- class가 "entries"인 article 태그시작 -->
+    
+    	<div class="context"> <!-- class가 "context"인 div 태그시작 -->
+        <h1>WELCOME TO E-SEUL HOMEPAGE :)</h1> <!-- h1 태그 -->
+        <p><strong>WEB</strong><!-- 강조 text태그 --> - HTML / CSS / JAVASCRIPT / MEDIAQUERY / JSP</p> <!-- p태그 -->
+        <p><strong>APP</strong><!-- 강조 text태그 --> - JAVA / ANDROID</p><!-- p태그 -->
+        </div><!-- div 태그종료 -->
+		<div class="quick_menu"> <!-- class가 "quick_menu"인 div태그시작 -->
+			<img src="port_img.png" id="port_image" alt=""><!-- id가 port_image이고 port_img.png의 이미지 태그 -->
+			<img src="cm_img.png" id="cm_image" alt=""> <!-- id가 port_image이고 cm_img.png의 이미지 태그 -->
+		</div><!-- div 태그종료 -->
+		<div class="quick_comm"><!-- class가 quick_comm인 div 태그시작 -->
+        	<ul><!-- ul 태그시작 -->
+        		<li>이름 : <input type="text" maxlength="12" placeholder="이름을 입력하세요." autofocus ><!-- type이 "text", 최대 12글자, "이름을 입력하세요."로 입력에 대한 힌트를 알려주고 자동으로 포커스를 맞춰주는 input태그 -->
+        		</li><!-- li태그 -->
+            	<li>연락처 : <input type="tel" placeholder="연락처를 입력하세요."></li><!-- li태그 -->
+            	<li>내용 : <textarea id="context" placeholder="문의할 내용을 입력하세요."></textarea></li><!-- li태그 -->
+            </ul><!-- ul 태그종료 -->
+            <input type="submit" value="보내기"> <!-- type이 "submit"인 input태그  -->
+            
+        </div><!-- div 태그종료 -->
+		
+	</article><!-- article 태그종료 -->
+	
+	<footer class="foot"> <!-- class가 foot인 footer -->
+		<p>Copyright &copy; 2016 All rights Reserved</p> <!-- p태그 -->
+	</footer><!-- footer 태그종료 -->
+</body><!-- body 영역종료 -->
+</html><!-- html 영역종료 -->

@@ -1,0 +1,387 @@
+@CHARSET "EUC-KR"; /* EUC-KR 인코딩 */
+.menu:before, .menu:after{ /* menu 클래스 전이나 후로*/
+	content: " "; /* 가상으로 빈내용 생성 */
+	display: table; /* 테이블 안에 블록 요소를 보여주는 기능 */
+}
+.menu:after{ /* menu 클래스 이후로
+	/* 상위태그의 높이 값이 float를 적용한 하위 태그의 높이를 반영하지 못해서
+	이상하게 보일 때를 방지하기 위해서 사용 */
+	clear:both;
+}
+.menu{ 
+	*zoom: 1; 
+} /* menu 클래스의 확대비율을  100%로 보여줌 */
+
+/* Desktop 화면일 때 */
+
+	/* 메뉴 */
+	.menu{	/* menu 클래스 설정 */
+		width:100%; /* 너비 100%(인터넷창 너비가 움직여도 꽉 차도록 설정 */
+		height:40px; /* 높이  40px로 설정 */
+		background:#ffd880; /* 바탕색을 #ffd880으로 설정 */
+		border-bottom: 1px solid #f1592a; /* bottom 테두리(굵기:1px, 실선, 색상:#f1592a)로 설정 */
+		font-family: Britannic Bold, Arial, sans-serif; /* 폰트 설정 */
+	}
+	
+	#menu{ /* menu 아이디 설정 */
+		padding: 0; /* padding 여백 제거 */
+		margin: 0 auto; /* margin 0 : 위와 아래를 여백 0으로 준 값, auto : 좌, 우를 동일한 여백의 크기로 준 값으로 설정 */
+		width : 600px; /* 너비 600px로 설정 */
+		height : 40px; /* 높이 40px로 설정 */
+	}
+	#menu li{ /* menu 아이디 안에 속한 li태그 설정 */
+		display:inline; /* inline요소처럼 표시 */
+		float:left;	/* 각 요소들을 왼쪽으로부터 일렬로 정렬되어 표시 */
+		line-heigt:40px; /* 행간(줄 높이)를 40px으로 설정 */
+		vertical_align:middle; /* 수직 정렬을 중간으로 설정 */
+		text-align:center; /* 텍스트 정렬을 가운데로 설정*/
+		position:relative; /* 주어진 원래의 위치를 기준으로 이동하도록 지정 (상대 위치) */
+	}
+	
+	#menu a{ /* menu 아이디안에 속한 a태그 설정 */
+		width: 100px; /* 너비를 100px로 설정 */
+		display: inline-block; /* inline-block요소(요소는 inline 내부는 block)처럼 표시 */
+		text-decoration:none;  /* 링크 걸린 텍스트의 밑줄 제거 */
+		text-align:center; /* 텍스트 정렬을 가운데로 설정 */
+		color:#FFF; /* 글씨 색상을 #FFF로 설정 */
+		text-shadow: 1px 1px 0px #283744; /* 텍스트 그림자 설정 */
+		line-height : 40px; /* 행간을 40px로 설정 */
+		font-weight:bold; /* 폰트 굵기를 bold로 설정 */
+		font-size:11pt; /* 폰트 크기를 11pt로 설정 */
+	}	
+	.menu li a{ /* menu 클래스안에 li태그 안에 a태그 설정 */
+		border-left: 1px solid #f1592a; /* 왼쪽 테두리(굵기:1px, 실선, 색상:#f1592a)로 설정 */ 
+		box-sizing: border-box; /* 박스 형태의 레이어로 설정. padding 또는 border 영역을 포함하여 width, height를 결정하여 더이상 너비가 늘어나지 않는다. */
+		-moz-box-sizing: border-box; /* Firefox, Webkit, Opera, IE8+ 지원 */
+		-webkit-box-sizing: border-box;
+	}
+	#menu li:last-child a{ /* menu 아이디안에 li태그 중 마지막 요소의 a태그 설정 */
+		border-right: 1px solid #f1592a; /* 오른쪽 테두리(굵기: 1px, 실선, 색상: #f1592a)로 설정 */
+	}
+	#menu a:hover, #menu a:active{ /* menu 아이디안에 a태그가 마우스 오버하고 활동할 때 설정 */
+		background: #f1592a; /* 바탕색을 #f1592a로 설정 */
+	}
+	.menu a#pull{ /* menu 클래스안에 아이디가 pull인 a태그 설정 */
+		display: none; /* 보이지 않도록 설정 */
+	}
+	.menu img{ /* menu 클래스안에 img태그 설정 */
+		float:left; /* 각 요소들을 왼쪽으로부터 일렬로 정렬하도록 설정 */
+	}
+	
+	/* 서브 메뉴 */
+	#sub_port{	/* 아이디 sub_port 설정 */
+		display:none; /* 안보이도록 설정 */
+		margin: 0;	/* margin 여백 없앰 */
+		padding: 0; /* padding 여백 없앰 */
+		position:absolute; /* 부모의 위치를 기준으로 이동하도록 지정 (절대 위치) */
+		background : #ffd880; /* 배경색을 #ffd880으로 설정 */
+		
+	}
+
+	#sub_port a{ /* 아이디 sub_port에서 a태그 설정 */
+		display:block; /* 요소를 block요소로 설정 */
+		border-top:1px solid #f1592a; /* 위쪽 테두리(굵기:1px, 실선, 색상:#f1592a)로 설정 */
+		text-decoration : none; /* 링크걸린 텍스트의 밑줄 제거 */
+		color:#FFF;	/* 텍스트 색상을 #FFF로 설정 */
+		text-shadow : 1px 1px 0px #283744; /* 텍스트 그림자 설정 */
+		text-align : center; /* 텍스트 정렬을 가운데로 설정 */
+	}
+	
+	#sub_port a:hover{ /* 아이디 sub_port에서 a태그에 마우스오버가 되었을 때 설정 */
+		background : #f1592a; /* 배경색을 #f1592a로 설정 */
+	}
+	
+	#sub_port li:first-child a{ /* 아이디 sub_port에서 li태그 중 첫번째 요소의 a태그 설정 */
+		border-right:1px solid #f1592a; /* 오른쪽 테두리(굵기:1px, 실선, 색상:#f1592a)로 설정*/
+	}
+	
+	#sub_port li:last-child a{ /* 아이디 sub_port li태그 중 마지막 요소의 a태그 설정 */
+		border-bottom:1px solid #f1592a; /* 바닥 테두리(굵기:1px, 실선, 색상:#f1592a)로 설정 */
+	}
+	
+	/*   내용 부분 */
+	.entries{		/* 클래스 entries 설정 */
+		margin-top:80px; /* margin-top을 80px로 설정 */
+		margin-bottom:40px; /* margin-bottom을 40px로 설정 */
+		width:100%;	/* 너비를 100%로 설정 */
+		height:auto; /* 높이를 자동으로 설정 */
+		position:relative; /* 상대위치로 설정 */
+				
+	}
+	.context h1{ 	/* 클래스 context안에 h1 태그 설정 */
+		text-align:center; /* 텍스트 정렬을 가운데로 설정 */
+		font-size:24pt;	/* 폰트 크기를 24pt로 설정 */
+	}
+	.context strong{ /* 클래스 context안에 strong 태그 설정 */
+		color:#00F; /* 텍스트 색상을 #00F로 설정 */
+	}
+	.context p{	/* 클래스 context안에 p태그 설정 */
+		text-align:center; /* 텍스트 정렬을 가운데로 설정 */
+	}
+	.quick_menu{ /* 클래스 quick_menu 설정 */
+		width:100%; /* 너비를 100%로 설정 */
+		position:relative; /* 상대 위치 설정 */
+	}
+	.quick_menu img{	/* 클래스 quick_menu안에 img태그 설정 */
+		width:300px;	/* 너비를 300px로 설정 */
+		height:225px;	/* 높이를 225px로 설정 */
+	 	float:left;		/* 요소를 왼쪽으로 일렬로 정렬하게 설정 */
+		margin-left:245px;	/* margin-left를 245px로 설정 */
+		padding:20px;	/* padding을 20px로 설정 */
+		margin-bottom:40px;	/* margin-bottom을 40px로 설정 */
+	}
+	.quick_comm{	/* 클래스 quick_comm를 설정 */
+		width:800px;	/* 너비를 800px로 설정 */
+		height:500px;	/* 높이를 500px로 설정 */
+		margin:0 auto;	/* margin을 0 auto로 설정 */
+		clear:left;	/* 왼쪽으로 일렬로 정렬하는 것을 풀어줌 */
+		background:#80a7ff; /* 배경색을 #80a7ff로 설정 */
+	}
+	.quick_comm ul{	/* 클래스 quick_comm안에 ul태그 설정 */
+		padding: 60px;	/* padding을 60px로 설정 */
+	}
+	.quick_comm li{	/* 클래스 quick_comm안에 li태그 설정 */
+		display:block;	/* block요소로 설정 */
+	}
+	.quick_comm input{	/* 클래스 quick_comm input태그 설정 */
+		width:300px;	/* 너비를 300px로 설정 */
+		margin:5px;		/* margin을 5px로 설정 */
+	}
+	.quick_comm textarea{	/* 클래스 quick_comm안에 textarea태그 설정*/
+		width:100%;			/* 너비를 100%로 설정 */
+		height:150px;		/* 높이를 150px로 설정 */
+		vertical-align:top;	/* 수직 정렬을 top으로 설정 */
+	}
+	.quick_comm input[type=submit]{ /* 클래스 quick_comm안에 input태그 중 type이 submit인 요소 설정*/
+		
+		height:50px;	/* 높이를 50px로 설정*/
+		margin-left:32%; /* margin-left를 32%로 설정*/
+		margin-top:20px; /* margin-top을 20px로 설정*/
+		align:middle; /* 정렬을 중간으로 설정 */
+	}
+	
+	
+
+	/*   끝 부분 */
+	.foot{	/* 클래스 foot 태그 설정 */
+		width:100%;	/* 너비를 100%로 설정 */
+		line-height:40px;  /* 행간을 40px로 설정 */
+		height: 40px;	/* 높이를 40px로 설정 */
+		text-align : center;	/* 텍스트 정렬을 가운데로 설정 */
+		background : #f1592a;	/* 바탕색을 #f1592a로 설정 */
+		position:relative;	/* 상대위치로 설정 */
+	}
+	
+/* mobile 화면일 때 */
+@media screen and (max-width: 800px){ /* 최대 너비가 800px일 때 적용 */
+	/* 메뉴 부분 */
+	.menu{				/* 클래스 menu 설정 */
+		height: auto;
+	}
+	#menu{				/* 아이디 menu 설정 */
+		width:100%;
+		display:block;
+		height:auto;
+	}
+	
+	#menu li{			/* 아이디 menu안에 li태그 설정 */
+		width:50%;
+		float:left;
+		position:relative;
+	}
+	#menu li a{			/* 아이디 menu안에 li태그의 a태그 설정 */
+		border-bottom: 1px solid #f1592a;		
+
+	}
+	#menu li:nth-child(even) a{	/* 아이디 menu안에 li태그 중 짝수인 요소의 태그 설정 */
+		border-right: 1px solid #f1592a;
+	}
+	
+	#menu a{	/* 아이디 menu안에 a태그 설정 */
+		text-align: center;
+		width: 100%;
+	}
+		
+	#sub_port{	/*아이디 sub_port 설정*/
+		width:100%;
+	} 
+    
+	.menu img{	/* 클래스 menu안에 img태그 설정 */
+		display:none;
+	}
+	
+
+	
+	
+	/* 내용 부분 */
+	.entries{	/* 클래스 entries 설정 */
+		width:100%;
+		height:auto;
+		margin-bottom:40px;
+		position:relative;
+	}
+	
+	.quick_menu{	/* 클래스 quick_menu 설정 */
+		width:100%;
+	}
+	
+	.quick_menu img{ /* 클래스 quick_menu안에 img태그 설정 */
+		width:150px;
+		height:115px;
+		float:left;	
+	}
+	
+	.quick_comm{	/* 클래스 quick_comm 설정 */
+		width:100%;
+	}
+
+	.quick_comm li{ /* 클래스 quick_comm안에 li태그 설정 */
+		display:block;
+	}
+	
+	.quick_comm input{	/* 클래스 quick_comm안에 input태그 설정 */
+		width:300px;
+		margin:5px;
+	}
+	
+	.quick_comm #context{	/* 클래스 quick_comm안에 아이디가 context인 요소 설정 */
+		width:100%;
+	}
+	
+	.quick_comm input[type=submit]{ /* 클래스 quick_comm안에 input태그 중 type이 submit인 요소 설정 */
+		height:50px;
+		margin:25%;
+		margin-top:20px;
+	}
+
+	/* 끝 부분 */
+	.foot{		/* 클래스 foot 설정 */
+		width:100%;
+		position:relative;
+	}
+
+}
+
+@media only screen and (max-width: 480px){ /* 최대 너비가 480px일 때 적용 */
+
+	#menu{		/* 아이디 menu 설정 */
+		display:none;
+		height:auto;
+	}
+	
+	.menu a#pull{	/* 클래스 menu안에 아이디가 pull인 a태그 설정 */
+		width:100%;
+		height:40px;
+		display:block;
+		text-align : center;
+		text-decoration : none;
+		text-size : 11pt;
+		color : #FFF;
+		background-color: #f1592a;
+		position : relative;
+		vertical-align : bottom;
+		line-height:40px;
+	}
+	.menu a#pull:after{ /* 클래스 menu 아이디가 pull인 a태그 이후에 설정 */
+		background: url(nav-icon.png) no-repeat; /* 바탕을 nav-icon.png로 설정하고 반복안하도록 설정*/  
+		content: ""; /* 빈 컨텐츠 설정 */
+		width: 30px;
+		height: 30px;
+		display: inline-block;
+		position: absolute;
+		right: 15px;
+		top: 10px;
+	}
+	
+	/* 내용 부분 */
+	.entries{	/* 클래스 entries 설정 */
+		width:100%;
+		height:auto;
+		margin-bottom:40px;
+		position:relative;
+	}
+	
+	.quick_menu{	/* 클래스 quick_menu 설정 */
+		position:relative;
+	}
+	
+	.quick_menu img{	/* 클래스 quick_menu안에 img 설정 */
+		width:100px;
+		height:75px;
+		margin-left:150px;
+		float:left;
+	}
+	
+	.quick_comm{	/* 클래스 quick_comm 설정 */
+		width:400px;
+	}
+	
+	.quick_comm ul{	/* 클래스 quick_comm안에 ul태그 설정 */
+		padding: 30px;
+	}
+	
+	.quick_comm input{	/* 클래스 quick_comm안에 input태그 설정 */
+		width:250px;
+		margin:5px;
+	}
+	
+	.quick_comm input[type=submit]{	/* 클래스 quick_comm안에 input태그 중 type이 submit인 요소 설정 */
+		margin-top:25px;
+		margin-left:75px;
+	
+	}
+
+	.foot{	/* 클래스 foot 설정 */
+		width:100%;
+		position:relative;
+	}
+
+	
+}
+/* 스마트폰 화면 */
+@media only screen and (max-width:320px){
+	/* 최대 너비가 320px일 때 설정 */
+	#menu li{	/* 아이디 menu 안에 li태그 설정 */
+		dlsplay:block;
+		float: none;
+		width: 100%;
+	}
+	
+	#menu li a{	/* 아이디 menu안에 li태그의 a태그 설정 */
+		border-bottom: 1px solid #f1592a;
+	}
+	#menu li:nth-child(odd) a{	/* 아이디 menu안에 li태그 중 홀수인 요소의 a태그 설정 */
+		border-right : 1px solid #f1592a;
+	}
+	
+	#sub_port{	/* 아이디 sub_port 설정 */
+		display : none;
+	}
+	
+	.menu img{	/* 클래스 menu img태그 설정 */
+		display : none;
+	}
+	
+	.context h1{	/* 클래스 context안에 h1태그 설정 */
+		font-size:18px;
+	}
+	
+	.context p{		/* 클래스 context안에 p태그 설정 */
+		font-size:16px;	
+	}
+	
+	.quick_menu img{ 	/* 클래스 quick_menu안에 img태그 설정 */
+		margin:15px;
+	}
+	
+	.entries{	/* 클래스 entries 설정 */
+		height:auto;
+	}
+	
+	.foot{	/* 클래스 foot 설정 */
+		width:100%;
+		position:relative;
+	}
+
+}
+
